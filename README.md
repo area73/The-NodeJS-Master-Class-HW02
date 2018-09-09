@@ -13,7 +13,11 @@ To do hot reload you can try:
 
     node watcher index.js
 
-To run test
+To run all test
+    
+    node test/index.js
+
+To run individual test go to test folder and run any *.spec.js file
 
 Additionally you can pass NODE_ENV = <dev || staging || prod> to get different servers config    
      
