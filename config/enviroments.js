@@ -5,8 +5,8 @@
 const fs = require('fs');
 
 const httpsServerOptions = {
-  key: fs.readFileSync('./cert/key.pem'),
-  cert: fs.readFileSync('./cert/cert.pem'),
+  key: fs.readFileSync('../cert/key.pem'),
+  cert: fs.readFileSync('../cert/cert.pem'),
 };
 
 const environments = {
@@ -14,7 +14,7 @@ const environments = {
     name: 'development',
     http: 3000,
     // https: 3100,
-    httpsOtions: httpsServerOptions,
+    // httpsOtions: httpsServerOptions,
     hashingSecret: 'Pepinillos',
   },
   staging: {

@@ -10,7 +10,7 @@ const dataUpdateOk = { name: 'Rodrigo', lastName: 'Erades' };
 fileHandler.del(relativeFilePath)
   .finally(() => {
     console.log('It should create a new file');
-    assert.doesNotReject(fileHandler.create(relativeFilePath)(dataOk)
+    assert.doesNotReject(fileHandler.create(relativeFilePath, dataOk)
       .catch(err => console.log('ERROR => ', err)));
 
     console.log('It should read a file');

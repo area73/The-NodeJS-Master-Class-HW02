@@ -29,7 +29,7 @@ const exitPorccess = (err) => {
 
 const execFiles = (err, items) => {
   if (err) throw new Error();
-  items.filter(testFile => testFile !== 'index.js').map(file => runScript(file, exitPorccess));
+  items.filter(testFile => /.spec.js$/.test(testFile)).map(file => runScript(file, exitPorccess));
 };
 
 fs.readdir('./', execFiles);
