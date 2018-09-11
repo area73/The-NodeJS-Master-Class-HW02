@@ -11,8 +11,8 @@ token.post = (data, callback) => {
   const password = helpers.minimumLength(helpers.isString(data.payload.password).trim(), 0);
   if (phone && password) {
     dataAccess.read(`user/${phone}`)
-      .then((data) => {
-        if (helpers.parseJsonToObject(data).password === helpers.hash(password)) {
+      .then((userData) => {
+        if (helpers.parseJsonToObject(userData).password === helpers.hash(password)) {
           const tokenId = helpers.createRandomString(20);
           const expires = Date.now() + 1000 * 60 * 60;
           const tokenObject = {
@@ -39,7 +39,7 @@ token.get = (data, callback) => {
   const id = helpers.minimumLength((data.queryStringObject.id).trim(), 19);
   if (id) {
     dataAccess.read(`token/${id}`)
-      .then(data => callback(200, data))
+      .then(tokenData => callback(200, tokenData))
       .catch(err => callback(400, { Error: err.code }));
   } else {
     callback(400, { Error: 'Missing required fields' });
@@ -61,7 +61,6 @@ token.put = (data, callback) => {
     callback(400, { Error: 'Missing required fields' });
   }
 };
-
 
 token.delete = (data, callback) => {
   const id = helpers.minimumLength(helpers.isString(data.payload.id).trim(), 19);
