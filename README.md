@@ -14,8 +14,8 @@ To do hot reload you can try:
     node watcher index.js
 
 To run all test
-    
-    node test/index.js
+    cd test
+    node index.js
 
 To run individual test go to test folder and run any *.spec.js file
 

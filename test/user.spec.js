@@ -12,6 +12,13 @@ const dataOk = {
   },
 };
 
+const tokenObject = {
+  phone: '123456789',
+  id: 'G2iHTpt5miP7ACxRfYQq',
+  expires: 999991536694405122,
+};
+
+
 const userCreate = () => {
   console.log('It should create a new user [METHOD = POST]');
   const dataOkPost = Object.assign({}, dataOk, { method: 'post' });
@@ -33,7 +40,7 @@ const userRetrive = () => {
   console.log('It should give us a 200  trying to retrieve user with token [METHOD = GET]');
   const dataOkGet = Object.assign({},
     dataKoGet,
-    { headers: { token: '7GQd8mXFH1wRwAYZdQav' } });
+    { headers: { token: 'G2iHTpt5miP7ACxRfYQq' } });
   userRoute(dataOkGet, (codeNum, infoCode) => {
     assert.deepStrictEqual(200, codeNum);
   });
@@ -43,7 +50,7 @@ const userUpdate = () => {
   const dataOkPatch = Object.assign({},
     { payload: { note: 'New Fild added', phone: '123456789' } },
     { method: 'patch' },
-    { headers: { token: '7GQd8mXFH1wRwAYZdQav' } });
+    { headers: { token: 'G2iHTpt5miP7ACxRfYQq' } });
   userRoute(dataOkPatch, (codeNum, infoCode) => {
     assert.deepStrictEqual(200, codeNum);
   });
@@ -53,7 +60,7 @@ const userDelete = () => {
   const dataOkDelete = Object.assign({},
     { payload: { phone: '123456789' } },
     { method: 'delete' },
-    { headers: { token: '7GQd8mXFH1wRwAYZdQav' } });
+    { headers: { token: 'G2iHTpt5miP7ACxRfYQq' } });
   userRoute(dataOkDelete, (codeNum, infoCode) => {
     assert.deepStrictEqual(200, codeNum);
   });
@@ -67,4 +74,8 @@ const runTest = () => {
 };
 
 fileHandler.del('user/123456789')
+  .then(() => {
+    fileHandler.create('token/G2iHTpt5miP7ACxRfYQq', tokenObject);
+  })
+  .catch(err => false)
   .finally(runTest);
