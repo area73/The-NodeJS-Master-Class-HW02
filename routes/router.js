@@ -1,10 +1,10 @@
 const notFound = require('./notFound');
-const greetings = require('./greetings');
 const user = require('./user');
+const token = require('./token');
 
 // Define the request router
 module.exports = {
-  hello: greetings,
   default: notFound,
   user,
+  token,
 };

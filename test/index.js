@@ -25,12 +25,11 @@ const runScript = (scriptPath, callback) => {
 const exitPorccess = (err) => {
   if (err) throw err;
   console.log('finished running scripts');
-  // process.exit(0);
 };
 
 const execFiles = (err, items) => {
   if (err) throw new Error();
-  items.filter((testFile) => testFile !== 'index.js').map((file) => runScript(file, exitPorccess));
+  items.filter(testFile => testFile !== 'index.js').map(file => runScript(file, exitPorccess));
 };
 
 fs.readdir('./', execFiles);

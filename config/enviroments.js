@@ -15,18 +15,21 @@ const environments = {
     http: 3000,
     // https: 3100,
     httpsOtions: httpsServerOptions,
+    hashingSecret: 'Pepinillos',
   },
   staging: {
     name: 'development',
     http: 5000,
     https: 5100,
     httpsOtions: httpsServerOptions,
+    hashingSecret: 'Pepinillos',
   },
   prod: {
     name: 'production',
     // http: 4000,
     https: 4100,
     httpsOtions: httpsServerOptions,
+    hashingSecret: 'Pepinillos',
   },
 };
 

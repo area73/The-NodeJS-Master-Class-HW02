@@ -9,6 +9,7 @@ const https = require('https');
 const config = require('./config/enviroments');
 const router = require('./routes/router');
 const reqUtil = require('./lib/reqUtil');
+const helper = require('./lib/helpers');
 const { retry } = require('./lib/serverUtils');
 
 
@@ -17,7 +18,7 @@ const server = function (req, res) {
   const chosenHandler = router[reqData.trimmedPath] || router.default;
 
   const executeResponse = () => {
-    reqData.endPayloadData();
+    reqData.payload = helper.parseJsonToObject(reqData.endPayloadData());
     chosenHandler(reqData, (statusCode, payload) => {
       const responseStatusCode = statusCode || 200;
       const responsePayload = payload || {};
@@ -32,7 +33,6 @@ const server = function (req, res) {
   req.on('data', data => reqData.addPayloadData(data));
   req.on('end', executeResponse);
 };
-
 
 
 if (config.http) {

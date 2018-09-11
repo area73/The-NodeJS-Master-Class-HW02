@@ -9,6 +9,9 @@ const create = (psw, email, params) => ({ action: 'success', msg: 'User saved on
 
 const user = {
   create,
+  recover,
+  update,
+  del,
 };
 
 module.exports = user;
