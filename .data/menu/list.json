@@ -1,66 +1,72 @@
 {
-  "pizzas": {
-    "Margarita": {
+  "pizzas": [
+    {
+      "name":"Margarita",
       "id": 1,
       "price": {"s": 6, "m": 8, "l": 12},
       "desc": "Plain old pizza, with a base of only tomato and mozzarella. Ready for you to add all the toppings that you like"
     },
-    "Pepperoni": {
+    {
+      "name": "Pepperoni",
       "id": 2,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "Poll after poll, pepperoni always tops the list of America’s favorite pizza toppings. When it doubt, you can’t go wrong with a classic."
     },
-    "Breakfast Sausage-Egg Pizza": {
+    {
+      "name": "Breakfast Sausage-Egg Pizza",
       "id": 3,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "This earthy topping can be divisive in the kitchen, but many agree that it fits right in on a pizza, and this breakfast recipe is a perfect excuse to try eggs on a pizza. Spoiler: You’re going to love it."
     },
-    "Sausage and Kale Pesto Pizza": {
+    {
+      "name": "Sausage and Kale Pesto Pizza",
       "id": 4,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "Some prefer mild, others spicy, and Southerners Conecuh, but sausage is consistently a favorite pizza topping of Americans. This cast-iron pizza recipe gives you another reason to love that skillet."
     },
-
-    "Smoked Sausage, Grilled Corn, and Sweet Onion Pizza": {
+    {
+      "name": "Smoked Sausage, Grilled Corn, and Sweet Onion Pizza",
       "id": 5,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "Whether they crisp up in the oven or go on the pizza caramelized, onions are a popular topping that add a little salty or a little sweet, depending how they’re prepared. Red onions often accompany barbecue chicken pizzas, while white and yellow onions are popular for supreme pizzas."
     },
-    "Pea Pesto Flatbread": {
+    {
+      "name": "Pea Pesto Flatbread",
       "id": 6,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "Bacon goes well with anything (try us), so of course it’s a popular pizza topping. This fresh spring recipe gets salty, meaty flavor from just a few bacon crumbles. You’ll also see pizzas topped with pancetta, which is bacon’s Italian cousin."
     },
-    "Deep-Dish Skillet Pizza": {
+    {
+      "name": "Deep-Dish Skillet Pizza",
       "id": 7,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "Who doesn’t love a little extra cheese for the perfect cheese-pull picture? We sure do. You might want to check with your local pizza joint to see how much cheese actually comes with an “extra cheese” order, because apparently, it’s hotly debated."
     },
-
-    "Sheet Pan White Pizza with Salami and Peppers": {
+    {
+      "name": "Sheet Pan White Pizza with Salami and Peppers",
       "id": 8,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "Green, red, yellow, or orange, peppers add a missing crunchy element to chewy, cheesy pizza. This sheet-pan recipe is the easiest way to serve pizza to a crowd, which is code for, “You should have a pizza party.”"
     },
-
-    "Antipasto Pizza": {
+    {
+      "name": "Antipasto Pizza",
       "id": 9,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "People either love or hate olives, but even if you’re not a fan, you might actually like the salty bite black olives add to a generously topped pizza. Or you’ll just pick them all off. Either way."
     },
-
-    "Quick BBQ Chicken Pizzas": {
+    {
+      "name": "Quick BBQ Chicken Pizzas",
       "id": 10,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "The winner winner of weeknight meals goes well on pizzas, too! BBQ chicken, buffalo chicken, and chicken bacon ranch are common pizza orders that contain this protein."
     },
-
-    "Grilled Ham and Pineapple Pizza": {
+    {
+      "name": "Grilled Ham and Pineapple Pizza",
       "id": 11,
       "price": {"s": 10, "m": 12, "l": 15},
       "desc": "Although a debate about whether or not pineapple belongs on pizza can be as polarizing as an Iron Bowl, pineapple-on-pizza lovers are devoted, so it remains a constant on menus."
     }
-  },
+  ],
   "toppings": [{"id":1, "name":"Pepperoni","price": 2},
                 {"id":2, "name":"Mushrooms","price": 2},
                 {"id":3, "name":"Onions","price": 2},
