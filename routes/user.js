@@ -4,6 +4,7 @@ const tokenUtil = require('../lib/tokenUtils');
 
 const acceptableMethods = ['post', 'get', 'put', 'patch', 'delete'];
 const user = {};
+const userDir = 'user'
 
 
 user.post = (data, callback) => {
@@ -26,7 +27,7 @@ user.post = (data, callback) => {
       password: hashedPassword,
       tosAgreement: true,
     };
-    dataAccess.create(`user/${phone}`, userObject)
+    dataAccess.create(`${userDir}/${phone}`, userObject)
       .then(() => callback(200, { info: 'User created' }))
       .catch((err) => {
         console.log(err);
@@ -44,7 +45,7 @@ user.get = (data, callback) => {
     // Verify that the given token is valid for the phone number
     tokenUtil.verify(token, phone)
       .then(() => {
-        dataAccess.read(`user/${phone}`)
+        dataAccess.read(`${userDir}/${phone}`)
           .then(userInfo => callback(200, helpers.parseJsonToObject(userInfo)))
           .catch(err => callback(400, { Error: err.code }));
       })
@@ -68,7 +69,7 @@ user.patch = (data, callback) => {
   if (phone && token) {
     tokenUtil.verify(token, phone)
       .then(() => {
-        dataAccess.update(`user/${phone}`, userObject)
+        dataAccess.update(`${userDir}/${phone}`, userObject)
           .then(() => callback(200, { info: 'user updated' }))
           .catch(err => callback(400, { Error: err.code }));
       })
@@ -84,9 +85,9 @@ user.delete = (data, callback) => {
   if (phone && token) {
     tokenUtil.verify(token, phone)
       .then(() => {
-        dataAccess.read(`user/${phone}`)
+        dataAccess.read(`${userDir}/${phone}`)
           .then(() => {
-            dataAccess.del(`user/${phone}`)
+            dataAccess.del(`${userDir}/${phone}`)
               .then(() => callback(200, { info: 'user deleted' }))
               .catch(err => callback(400, { Error: err.code }));
           })
